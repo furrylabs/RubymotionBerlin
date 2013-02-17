@@ -1,0 +1,26 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    bubble-wrap (1.1.5)
+    motion-resource (0.0.2)
+      bubble-wrap
+      motion-support
+    motion-stump (0.2.0)
+    motion-support (0.0.3)
+      bubble-wrap
+    rake (10.0.3)
+    teacup (1.2.5)
+      rake
+    webstub (0.3.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bubble-wrap
+  motion-resource
+  motion-stump
+  motion-support
+  rake
+  teacup
+  webstub
