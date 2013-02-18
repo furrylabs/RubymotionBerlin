@@ -5,7 +5,15 @@ class AppDelegate
     return true if RUBYMOTION_ENV == 'test'
     
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    @window.rootViewController = MeetupsViewController.alloc.init
+    
+    tab_controller = UITabBarController.alloc.init
+    tab_controller.setViewControllers([
+      MeetupsViewController.alloc.init,
+      MyProfileViewController.alloc.init
+    ], animated:true)
+    
+    @window.rootViewController = tab_controller
+    
     @window.makeKeyAndVisible
     true
   end

@@ -2,13 +2,13 @@ class MeetupsViewController < UITableViewController
   attr_accessor :meetups
   
   def init
+    self.title = "Meetups"
+    
     @meetups = []
     super
   end
   
   def viewDidLoad
-    self.title = "Meetups"
-
     load_data
     
     super

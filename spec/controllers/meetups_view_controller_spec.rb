@@ -13,9 +13,7 @@ describe MeetupsViewController do
   tests MeetupsViewController
   
   it "should have a title" do
-    wait 0.5 do
-      controller.title.should.not.be.nil
-    end
+    controller.title.should.not.be.nil
   end
   
   it "should show all meetups" do
