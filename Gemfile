@@ -1,6 +1,7 @@
 source :rubygems
 gem "rake"
 gem "motion-cocoapods"
+gem "motion-devices"
 gem "bubble-wrap"
 gem "teacup"
 gem "motion-support"

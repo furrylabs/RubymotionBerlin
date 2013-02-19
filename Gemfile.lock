@@ -27,6 +27,7 @@ GEM
     json (1.7.7)
     motion-cocoapods (1.2.1)
       cocoapods (>= 0.14.0)
+    motion-devices (0.0.1)
     motion-resource (0.0.2)
       bubble-wrap
       motion-support
@@ -58,6 +59,7 @@ PLATFORMS
 DEPENDENCIES
   bubble-wrap
   motion-cocoapods
+  motion-devices
   motion-resource
   motion-stump
   motion-support
