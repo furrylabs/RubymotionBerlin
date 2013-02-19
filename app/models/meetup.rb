@@ -3,4 +3,6 @@ class Meetup < MotionResource::Base
   
   self.collection_url = "meetups"
   self.member_url = "meetups/:id"
+  
+  has_many :talks, lambda { |r| { :meetup_id => r.id } }
 end

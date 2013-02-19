@@ -26,6 +26,10 @@ class MeetupsViewController < UITableViewController
     end
   end
   
+  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    navigationController.pushViewController(TalksViewController.alloc.initWithMeetup(@meetups[indexPath.row]), animated:true)
+  end
+  
   def load_data
     Reachability.when_reachable do
       SVProgressHUD.showWithMaskType(SVProgressHUDMaskTypeClear)

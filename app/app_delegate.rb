@@ -8,7 +8,7 @@ class AppDelegate
     
     tab_controller = UITabBarController.alloc.init
     tab_controller.setViewControllers([
-      MeetupsViewController.alloc.init,
+      UINavigationController.alloc.initWithRootViewController(MeetupsViewController.alloc.init),
       MyProfileViewController.alloc.init
     ], animated:true)
     
