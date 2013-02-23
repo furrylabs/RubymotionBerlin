@@ -2,6 +2,9 @@ class AppDelegate
   attr_reader :window
   
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+    NUISettings.initWithStylesheet("Theme")
+    NUIAppearance.init
+    
     return true if RUBYMOTION_ENV == 'test'
     
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)

@@ -18,5 +18,6 @@ Motion::Project::App.setup do |app|
   
   app.pods do
     pod 'SVProgressHUD', '0.8'
+    pod 'NUI'
   end
 end
