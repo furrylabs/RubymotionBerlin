@@ -1,11 +1,12 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ParseModel (0.0.6)
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.2)
-    bubble-wrap (1.1.5)
+    bubble-wrap (1.2.0)
     cocoapods (0.16.2)
       activesupport (~> 3.2.6)
       colored (~> 1.2)
@@ -28,12 +29,10 @@ GEM
     motion-cocoapods (1.2.1)
       cocoapods (>= 0.14.0)
     motion-devices (0.0.1)
-    motion-resource (0.0.2)
-      bubble-wrap
-      motion-support
+    motion-require (0.0.6)
     motion-stump (0.2.0)
-    motion-support (0.0.3)
-      bubble-wrap
+    motion-support (0.2.0)
+      motion-require (>= 0.0.6)
     multi_json (1.6.1)
     multipart-post (1.1.5)
     netrc (0.7.7)
@@ -55,10 +54,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ParseModel
   bubble-wrap
   motion-cocoapods
   motion-devices
-  motion-resource
   motion-stump
   motion-support
   rake

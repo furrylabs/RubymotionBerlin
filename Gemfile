@@ -4,7 +4,7 @@ gem "motion-cocoapods"
 gem "motion-devices"
 gem "bubble-wrap"
 gem "motion-support"
-gem "motion-resource"
+gem "ParseModel"
 
 group :spec do
   gem "webstub"

@@ -21,8 +21,8 @@ class MeetupsViewController < UITableViewController
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
     fresh_cell.tap do |cell|
       meetup = @meetups[indexPath.row]
-      cell.textLabel.text = meetup.address
-      cell.detailTextLabel.text = meetup.when
+      cell.textLabel.text = meetup.title
+      cell.detailTextLabel.text = "#{meetup.address} - #{meetup.when.to_date.to_s}"
     end
   end
   
@@ -31,17 +31,11 @@ class MeetupsViewController < UITableViewController
   end
   
   def load_data
-    Reachability.when_reachable do
-      SVProgressHUD.showWithMaskType(SVProgressHUDMaskTypeClear)
-      Meetup.find_all do |results, response|
-        SVProgressHUD.dismiss
-        if response.ok? && results
-          @meetups = results
-        else
-          Reachability.offline_alert
-        end
-        tableView.reloadData
-      end
+    SVProgressHUD.showWithMaskType(SVProgressHUDMaskTypeClear)
+    Meetup.query.find do |results, error|
+      SVProgressHUD.dismiss
+      @meetups = results
+      tableView.reloadData
     end
   end
   

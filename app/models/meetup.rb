@@ -1,8 +1,9 @@
-class Meetup < MotionResource::Base
-  attr_accessor :when, :address
+class Meetup
+  include ParseModel::Model
   
-  self.collection_url = "meetups"
-  self.member_url = "meetups/:id"
+  fields :title, :when, :address
   
-  has_many :talks, lambda { |r| { :meetup_id => r.id } }
+  def talks(&block)
+    Talk.query.whereKey("meetup_id", equalTo:self.PFObject).find(&block)
+  end
 end

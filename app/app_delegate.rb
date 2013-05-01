@@ -5,6 +5,8 @@ class AppDelegate
     NUISettings.initWithStylesheet("Theme")
     NUIAppearance.init
     
+    Parse.setApplicationId("pznw7QpAXyEfocAf7Gw5xK9sGt9vfLevNO25Ocvs", clientKey:"FX069U8ZDAJdSpEKub1PDMdGJL5TRrcSgqEMDU2e")
+    
     return true if RUBYMOTION_ENV == 'test'
     
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)

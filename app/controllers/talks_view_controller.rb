@@ -23,22 +23,16 @@ class TalksViewController < UITableViewController
     fresh_cell.tap do |cell|
       talk = @talks[indexPath.row]
       cell.textLabel.text = talk.title
-      cell.detailTextLabel.text = talk.description
+      cell.detailTextLabel.text = talk.text
     end
   end
   
   def load_data
-    Reachability.when_reachable do
-      SVProgressHUD.showWithMaskType(SVProgressHUDMaskTypeClear)
-      @meetup.talks do |results, response|
-        SVProgressHUD.dismiss
-        if response.ok? && results
-          @talks = results
-        else
-          Reachability.offline_alert
-        end
-        tableView.reloadData
-      end
+    SVProgressHUD.showWithMaskType(SVProgressHUDMaskTypeClear)
+    @meetup.talks do |results, error|
+      SVProgressHUD.dismiss
+      @talks = results
+      tableView.reloadData
     end
   end
   
