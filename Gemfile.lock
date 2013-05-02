@@ -28,6 +28,8 @@ GEM
     motion-cocoapods (1.2.1)
       cocoapods (>= 0.14.0)
     motion-devices (0.0.1)
+    motion-parse (0.0.1)
+      motion-support (>= 0.2.0)
     motion-require (0.0.6)
     motion-stump (0.2.0)
     motion-support (0.2.0)
@@ -56,6 +58,7 @@ DEPENDENCIES
   bubble-wrap
   motion-cocoapods
   motion-devices
+  motion-parse
   motion-stump
   motion-support
   rake
