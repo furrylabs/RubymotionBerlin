@@ -24,7 +24,7 @@ module MotionParse
         @parse_object = PFObject.objectWithClassName(self.class.name)
         if arg.is_a?(Hash)
           arg.each do |key, value|
-            @parse_object.setObject(value, forKey:key) if fields.include?(key)
+            @parse_object.setObject(value, forKey:key) if attributes.include?(key)
           end
         end
       end
@@ -32,10 +32,6 @@ module MotionParse
     
     def self.all(&block)
       find({}, &block)
-    end
-    
-    def self.query
-      PFQuery.alloc.initWithClassName(self.name)
     end
     
     def self.has_many(association)
@@ -53,7 +49,11 @@ module MotionParse
       
       get(q, &block)
     end
-
+    
+    def self.query
+      PFQuery.alloc.initWithClassName(self.name)
+    end
+    
     def self.get(query, &block)
       if block
         query.findObjectsInBackgroundWithBlock(lambda { |objects, error|

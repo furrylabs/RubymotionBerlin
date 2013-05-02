@@ -1,6 +1,5 @@
 describe MeetupsViewController do
   extend WebStub::SpecHelpers
-  extend MotionResource::SpecHelpers
   
   before do
     stub_request(:get, "http://localhost:3000/meetups.json").to_return(json: {
@@ -38,7 +37,7 @@ describe MeetupsViewController do
   end
   
   it "should disclose meetup" do
-    controller.navigationController.mock!(:pushViewController)
+    # controller.navigationController.mock!(:pushViewController)
     tap view("Here")
       
     1.should == 1

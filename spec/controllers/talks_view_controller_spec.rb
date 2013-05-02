@@ -1,6 +1,5 @@
 describe TalksViewController do
   extend WebStub::SpecHelpers
-  extend MotionResource::SpecHelpers
   
   before do
     meetup = Meetup.new(:id => 1)
