@@ -1,9 +1,5 @@
-class Meetup
-  include ParseModel::Model
+class Meetup < MotionParse::Base
+  attribute :title, :when, :address
   
-  fields :title, :when, :address
-  
-  def talks(&block)
-    Talk.query.whereKey("meetup_id", equalTo:self.PFObject).find(&block)
-  end
+  has_many :talks
 end

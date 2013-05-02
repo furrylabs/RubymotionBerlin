@@ -1,5 +1,3 @@
-class Talk
-  include ParseModel::Model
-  
-  fields :meetup_id, :title, :text
+class Talk < MotionParse::Base
+  attribute :meetup_id, :title, :text
 end

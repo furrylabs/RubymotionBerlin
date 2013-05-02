@@ -32,7 +32,7 @@ class MeetupsViewController < UITableViewController
   
   def load_data
     SVProgressHUD.showWithMaskType(SVProgressHUDMaskTypeClear)
-    Meetup.query.find do |results, error|
+    Meetup.all do |results, error|
       SVProgressHUD.dismiss
       @meetups = results
       tableView.reloadData
