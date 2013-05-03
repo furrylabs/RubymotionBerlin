@@ -1,6 +1,4 @@
 describe Talk do
-  extend WebStub::SpecHelpers
-  
   it "should extract attributes" do
     site = Talk.new(:title => "RubyMotion", :text => 'Intro talk about RubyMotion')
     site.title.should == 'RubyMotion'

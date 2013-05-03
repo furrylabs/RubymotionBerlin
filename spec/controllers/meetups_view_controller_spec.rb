@@ -1,12 +1,8 @@
 describe MeetupsViewController do
-  extend WebStub::SpecHelpers
+  extend MotionParse::SpecHelper
   
   before do
-    stub_request(:get, "http://localhost:3000/meetups.json").to_return(json: {
-      :meetups => [
-        { :id => 10, :when => '2013-01-01', :address => 'Here' }
-      ]
-    })
+    PFQuery.result_objects = [Meetup.new(:title => 'March Madness', :when => Date.new(2013, 01, 01), :address => 'Here')]
   end
   
   tests MeetupsViewController
@@ -24,22 +20,22 @@ describe MeetupsViewController do
     end
   end
   
-  it "should show meetup address" do
+  it "should show meetup title" do
     wait 0.2 do
-      view("Here").should.not.be.nil
+      view("March Madness").should.not.be.nil
     end
   end
   
-  it "should show meetup date" do
+  it "should show meetup address and date" do
     wait 0.2 do
-      view("2013-01-01").should.not.be.nil
+      view("Here - 2013-1-1").should.not.be.nil
     end
   end
   
   it "should disclose meetup" do
-    # controller.navigationController.mock!(:pushViewController)
-    tap view("Here")
-      
+    controller.navigationController.mock!(:pushViewController)
+    tap view("Here - 2013-1-1")
+    
     1.should == 1
   end
 end

@@ -1,13 +1,9 @@
 describe TalksViewController do
-  extend WebStub::SpecHelpers
+  extend MotionParse::SpecHelper
   
   before do
     meetup = Meetup.new(:id => 1)
-    stub_request(:get, "http://localhost:3000/meetups/1/talks.json").to_return(json: {
-      :talks => [
-        { :id => 10, :title => 'RubyMotion', :description => 'Intro talk about RubyMotion' }
-      ]
-    })
+    PFQuery.result_objects = [Talk.new(:title => 'RubyMotion', :text => 'Intro talk about RubyMotion')]
     
     self.controller = TalksViewController.alloc.initWithMeetup(meetup)
   end
